@@ -17,7 +17,9 @@ defmodule OtpWithPhxWeb.Router do
   scope "/", OtpWithPhxWeb do
     pipe_through :browser
 
-    get "/", PageController, :index
+    ############# Start new addition ! #############
+    live "/", CounterLive, :index
+    ############# End new addition !   #############
   end
 
   # Other scopes may use custom stacks.

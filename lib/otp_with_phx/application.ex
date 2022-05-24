@@ -1,4 +1,5 @@
 defmodule OtpWithPhx.Application do
+  alias OtpWithPhx.Counter
   # See https://hexdocs.pm/elixir/Application.html
   # for more information on OTP Applications
   @moduledoc false
@@ -15,7 +16,10 @@ defmodule OtpWithPhx.Application do
       # Start the PubSub system
       {Phoenix.PubSub, name: OtpWithPhx.PubSub},
       # Start the Endpoint (http/https)
-      OtpWithPhxWeb.Endpoint
+      OtpWithPhxWeb.Endpoint,
+      ############# Start new addition ! #############
+      Counter.child_spec()
+      ############# End new addition !   #############
       # Start a worker by calling: OtpWithPhx.Worker.start_link(arg)
       # {OtpWithPhx.Worker, arg}
     ]
